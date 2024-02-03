@@ -13,8 +13,8 @@ export class MainComponent implements OnInit  {
   intervalId:any;
   numberDisplay:string;
   constructor(private router:Router) {
-    this.countdown = 5;
-    this.numberDisplay = "";
+    this.countdown = 1500;
+    this.numberDisplay = "25:00";
   }
 
   ngOnInit(): void {
