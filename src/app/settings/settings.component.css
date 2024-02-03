@@ -3,6 +3,7 @@ height: 100vh;
 width: 100vw;
 background-color: rgb(32, 32, 32);
 display: flex;
+font-family: "monaco", monospace;
 }
 
 section {
@@ -14,6 +15,7 @@ color: wheat;
 }
 
 .Time{
+    margin: auto;
 width: 50px;
 display:flex;
 flex-direction:column;
