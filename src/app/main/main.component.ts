@@ -13,8 +13,15 @@ export class MainComponent implements OnInit  {
   intervalId:any;
   numberDisplay:string;
   constructor(private router:Router) {
-    this.countdown = 5;
-    this.numberDisplay = "25:00";
+    const storedTotalTime = localStorage.getItem('totalTime');  
+    const storedShortBreakTime = localStorage.getItem('shortBreakTime');
+    const storedLongBreakTime = localStorage.getItem('longBreakTime');
+    const totalTime = storedTotalTime ? parseInt(storedTotalTime, 10) * 60 : 25*60;
+    const shortBreakTime = storedShortBreakTime ? parseInt(storedShortBreakTime, 10) : 5;
+    const longBreakTime = storedLongBreakTime ? parseInt(storedLongBreakTime, 10) : 10;
+    this.countdown = totalTime;
+    this.numberDisplay = storedTotalTime ? storedTotalTime: "25";
+    this.numberDisplay = this.numberDisplay + ":00"
   }
 
   ngOnInit(): void {
@@ -53,6 +60,30 @@ export class MainComponent implements OnInit  {
 
   onSettings() {
     this.router.navigate([`/settings`]);
+  }
+
+  onShortBreak() {
+    const storedShortBreakTime = localStorage.getItem('shortBreakTime');
+    const shortBreakTime = storedShortBreakTime ? parseInt(storedShortBreakTime, 10)*60 : 5*60;
+    this.countdown = shortBreakTime;
+    this.numberDisplay = storedShortBreakTime ? storedShortBreakTime: "5";
+    this.numberDisplay = this.numberDisplay + ":00"
+  }
+
+  onLongBreak() {
+    const storedLongBreakTime = localStorage.getItem('longBreakTime');
+    const longBreakTime = storedLongBreakTime ? parseInt(storedLongBreakTime, 10) * 60 : 10*60;
+    this.countdown = longBreakTime
+    this.numberDisplay = storedLongBreakTime ? storedLongBreakTime: "10";
+    this.numberDisplay = this.numberDisplay + ":00"
+  }
+
+  onTimerBreak() {
+    const storedTotalTime = localStorage.getItem('totalTime'); 
+    const totalTime = storedTotalTime ? parseInt(storedTotalTime, 10) * 60 : 25*60;
+    this.countdown = totalTime;
+    this.numberDisplay = storedTotalTime ? storedTotalTime: "25";
+    this.numberDisplay = this.numberDisplay + ":00"
   }
  
 }
