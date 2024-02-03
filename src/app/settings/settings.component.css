@@ -1,22 +1,23 @@
 body {
-height: 100vh;
-width: 100vw;
-background-color: rgb(32, 32, 32);
-display: flex;
-font-family: "monaco", monospace;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
 }
 
 section {
-text-align: center;
-margin: auto;
-width: 60%;
-padding: 10px;
-color: wheat;
+    width: 50vw;
+    height: fit-content;
+    background-color: rgba(128, 128, 128, 0.3);
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    padding: 3%;
+    border-radius: 2cm;
 }
 
-.Time{
-    margin: auto;
-width: 50px;
-display:flex;
-flex-direction:column;
+button {
+    margin-top: 10px;
 }

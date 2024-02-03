@@ -7,6 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
+  totalTime: number = 60;
+  shortBreakTime: number = 5;
+  longBreakTime: number = 15;
+  autostart: boolean = true;
+  notifications: boolean = true;
 
   constructor(private router:Router) { }
 
@@ -14,6 +19,9 @@ export class SettingsComponent implements OnInit {
   }
 
   onBack() {
+    localStorage.setItem('totalTime', this.totalTime.toString());
+    localStorage.setItem('shortBreakTime', this.shortBreakTime.toString());
+    localStorage.setItem('longBreakTime', this.longBreakTime.toString());
     this.router.navigate([`/main`]);
   }
 }

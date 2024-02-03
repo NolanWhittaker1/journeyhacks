@@ -2,51 +2,37 @@
   <section>
     <h1>Settings :3</h1>
     <p>Time(in minutes)</p>
-    <div class="Time">
-      <label class="Time" for="totaltime">Total Time</label>
-      <input
-        type="number"
-        id="totaltime"
-        name="total"
-        min="0"
-        max="120"
-        value="60"
-      />
-      <label class="Time" for="shortbreak">Short Break</label>
-      <input type="number" id="shortbreak" name="sbreak" min="0" value="5" />
-      <label class="Time" for="longbreak">Long Break</label>
-      <input type="number" id="longbreak" name="lbreak" min="0" value="15" />
-    </div>
+    <label class="Time" for="totaltime">Total Time</label>
+    <input
+      type="number"
+      id="totaltime"
+      name="total"
+      min="0"
+      max="120"
+      value="60"
+      [(ngModel)]="totalTime"
+    />
+    <label class="Time" for="shortbreak">Short Break</label>
+    <input
+      type="number"
+      id="shortbreak"
+      name="sbreak"
+      min="0"
+      value="5"
+      [(ngModel)]="shortBreakTime"
+    />
+    <label class="Time" for="longbreak">Long Break</label>
+    <input
+      type="number"
+      id="longbreak"
+      name="lbreak"
+      min="0"
+      value="15"
+      [(ngModel)]="longBreakTime"
+    />
 
-    <div class="form-check form-switch">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        role="switch"
-        id="flexSwitchCheckChecked"
-        checked
-      />
-      <label class="form-check-label" for="flexSwitchCheckDefault"
-        >Autostart</label
-      >
-    </div>
-    <div class="form-check form-switch">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        role="switch"
-        id="flexSwitchCheckChecked"
-        checked
-      />
-      <label class="form-check-label" for="flexSwitchCheckChecked"
-        >Notifications</label
-      >
-    </div>
-
-    <div>
-      <button type="button" class="btn btn-secondary" (click)="onBack()">
-        Back
-      </button>
-    </div>
+    <button type="button" class="btn btn-primary" (click)="onBack()">
+      Back
+    </button>
   </section>
 </body>

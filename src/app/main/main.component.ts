@@ -14,7 +14,7 @@ export class MainComponent implements OnInit  {
   numberDisplay:string;
   constructor(private router:Router) {
     this.countdown = 5;
-    this.numberDisplay = "";
+    this.numberDisplay = "25:00";
   }
 
   ngOnInit(): void {
