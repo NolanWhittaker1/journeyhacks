@@ -1,12 +1,10 @@
 <body
-  [ngStyle]="{
-    'background-color': startVisible ? 'rgb(128,176,72)' : 'pink'
-  }"
+
 >
   <section id="heading">
     <img src="/assets/imgs/logo.png" alt="" />
     <span>
-      <button class="btn btn-light" (click)="onSettings()">
+      <button class="btn btn-light" (click)="onSettings()" id="mass">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -27,7 +25,7 @@
   <section
     id="timer"
     [ngStyle]="{
-      'background-color': startVisible ? 'rgb(48,120,32)' : 'pink'
+      'background-color': startVisible ? 'rgba(128, 128, 128, 0.2)' : 'rgba(128, 128, 128, 0.2)'
     }"
   >
     <span>

@@ -51,6 +51,8 @@ export class MainComponent implements OnInit  {
       clearInterval(this.intervalId);
       console.log("Countdown reached 0");
       this.toggleDisplays()
+      alert("FINISHED! WOOOOOO! SWITCHING TIME")
+      this.onShortBreak()
     }
   }
 
