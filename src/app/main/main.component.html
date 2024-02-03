@@ -59,7 +59,7 @@
         Long Break
       </button>
     </span>
-    <h1>{{ countdown }}</h1>
+    <h1>{{ countdown | date : "mm:s" }}</h1>
     <button
       id="start"
       type="button"
