@@ -59,7 +59,7 @@
         Long Break
       </button>
     </span>
-    <h1>{{ countdown | date : "mm:s" }}</h1>
+    <h1>{{ this.numberDisplay }}</h1>
     <button
       id="start"
       type="button"
@@ -74,7 +74,7 @@
       *ngIf="!startVisible"
       type="button"
       class="btn btn-danger btn-lg"
-      (click)="toggleDisplays()"
+      (click)="toggleDisplays(); onStop()"
     >
       Stop
     </button>
