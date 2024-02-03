@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -11,7 +12,7 @@ export class MainComponent implements OnInit  {
   startVisible:boolean = true;
   intervalId:any;
   numberDisplay:string;
-  constructor() {
+  constructor(private router:Router) {
     this.countdown = 5;
     this.numberDisplay = "";
   }
@@ -48,6 +49,10 @@ export class MainComponent implements OnInit  {
 
   toggleDisplays(): void {
     this.startVisible = !this.startVisible;
+  }
+
+  onSettings() {
+    this.router.navigate([`/settings`]);
   }
  
 }
